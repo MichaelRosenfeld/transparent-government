@@ -1,5 +1,5 @@
 
-const senateData =
+let senateData =
 {
     "status":"OK",
     "copyright":" Copyright (c) 2021 Pro Publica Inc. All Rights Reserved.",
@@ -21617,3 +21617,10 @@ const senateData =
 ]
 };
 
+const table = document.getElementById("senate-data"); 
+const members = senateData.results[0].members;
+
+for (let i = 0; i < members.length; i++){
+    let result = members[i].first_name;
+    table.insertAdjacentHTML('afterbegin', result); 
+}
