@@ -21628,12 +21628,15 @@ for (let i = 0; i < membersArr.length; i++) {
     let state = membersArr[i].state;
     let seniority = membersArr[i].seniority;
     let votesWithParty = membersArr[i].votes_with_party_pct;
+    let url = membersArr[i].url;
     let tr = document.createElement("tr");
     let td = document.createElement("td");
+    
     document.body.appendChild(tr);
     document.body.appendChild(td);
-    td.insertAdjacentHTML('afterbegin', firstName + " " + hasMiddleName(middleName) + " " + lastName + 
+    td.insertAdjacentHTML('afterbegin', firstName + " " + hasMiddleName(middleName) + " " + addUrl(url, lastName) + 
         " " + party + " " + state + " " + seniority + " " + votesWithParty + "%");
+    
 }
 
 function hasMiddleName(name) {
@@ -21642,4 +21645,8 @@ function hasMiddleName(name) {
     } else {
         return " "
     }
+}
+
+function addUrl(link, name) {
+    return "<a href=" + link + ">" + name +"</a>";
 }
