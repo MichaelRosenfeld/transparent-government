@@ -21617,10 +21617,10 @@ let senateData =
 ]
 };
 
-const table = document.getElementById("senate-data"); 
-const members = senateData.results[0].members;
+const tableParent = document.getElementById("senate-data");
+const membersArr = senateData.results[0].members;
 
-for (let i = 0; i < members.length; i++){
-    let result = members[i].first_name;
-    table.insertAdjacentHTML('afterbegin', result); 
+for (let i = 0; i < membersArr.length; i++){
+    let result = membersArr[i].first_name;
+    tableParent.insertAdjacentHTML('afterbegin', '<tr>result</tr>');
 }
