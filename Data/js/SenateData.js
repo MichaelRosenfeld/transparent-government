@@ -21629,17 +21629,17 @@ for (let i = 0; i < membersArr.length; i++) {
     let seniority = membersArr[i].seniority;
     let votesWithParty = membersArr[i].votes_with_party_pct;
     let tr = document.createElement("tr");
+    let td = document.createElement("td");
     document.body.appendChild(tr);
-    tr.insertAdjacentHTML('afterbegin', votesWithParty + "%" + " ");
-    tr.insertAdjacentHTML('afterbegin', seniority + " ");
-    tr.insertAdjacentHTML('afterbegin', state + " ");
-    tr.insertAdjacentHTML('afterbegin', party + " ");
-    tr.insertAdjacentHTML('afterbegin', lastName + " ");
-    if (middleName != null) {
-        tr.insertAdjacentHTML('afterbegin', middleName + " ");
+    document.body.appendChild(td);
+    td.insertAdjacentHTML('afterbegin', firstName + " " + hasMiddleName(middleName) + " " + lastName + 
+        " " + party + " " + state + " " + seniority + " " + votesWithParty + "%");
+}
+
+function hasMiddleName(name) {
+    if (name != null) {
+        return name;
+    } else {
+        return " "
     }
-    tr.insertAdjacentHTML('afterbegin', firstName + " ");
-    
-
-
 }
