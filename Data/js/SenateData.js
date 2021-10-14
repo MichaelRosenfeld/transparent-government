@@ -21624,14 +21624,22 @@ for (let i = 0; i < membersArr.length; i++) {
     let firstName = membersArr[i].first_name;
     let middleName = membersArr[i].middle_name;
     let lastName = membersArr[i].last_name;
+    let party = membersArr[i].party;
+    let state = membersArr[i].state;
+    let seniority = membersArr[i].seniority;
+    let votesWithParty = membersArr[i].votes_with_party_pct;
     let tr = document.createElement("tr");
-    
     document.body.appendChild(tr);
+    tr.insertAdjacentHTML('afterbegin', votesWithParty + "%" + " ");
+    tr.insertAdjacentHTML('afterbegin', seniority + " ");
+    tr.insertAdjacentHTML('afterbegin', state + " ");
+    tr.insertAdjacentHTML('afterbegin', party + " ");
     tr.insertAdjacentHTML('afterbegin', lastName + " ");
     if (middleName != null) {
         tr.insertAdjacentHTML('afterbegin', middleName + " ");
     }
     tr.insertAdjacentHTML('afterbegin', firstName + " ");
+    
 
 
 }
