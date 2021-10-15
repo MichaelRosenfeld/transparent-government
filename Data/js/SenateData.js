@@ -21619,6 +21619,10 @@ let senateData =
 const tableParent = document.getElementById("senate-data");
 const membersArr = senateData.results[0].members;
 
+let th = document.createElement("th");
+document.body.appendChild(th);
+th.insertAdjacentHTML("beforebegin", "First Name" + "Last Name")
+
 
 for (let i = 0; i < membersArr.length; i++) {
     let firstName = membersArr[i].first_name;
@@ -21629,11 +21633,13 @@ for (let i = 0; i < membersArr.length; i++) {
     let seniority = membersArr[i].seniority;
     let votesWithParty = membersArr[i].votes_with_party_pct;
     let url = membersArr[i].url;
+    
     let tr = document.createElement("tr");
     let td = document.createElement("td");
-
+    
     document.body.appendChild(tr);
     document.body.appendChild(td);
+    
     td.insertAdjacentHTML('afterbegin', addUrl(url, firstName) + " " +
         addUrl(url, hasMiddleName(middleName)) + " " + addUrl(url, lastName) +
         " " + party + " " + state + " " + seniority + " " + votesWithParty + "%");
