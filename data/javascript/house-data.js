@@ -1,3 +1,5 @@
+export {houseData};
+
 const houseData =
 {
     "status":"OK",
