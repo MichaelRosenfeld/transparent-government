@@ -10,14 +10,15 @@ function populateTable(element) {
     
     for(let i = 0; i < membersArr.length; i++){
             table.insertAdjacentHTML("beforeend",
-                "<tr><td>" + element[i].first_name + " " + 
-                (element[i].middle_name ||= " ") + 
-                addUrl(element[i].url, 
-                    element[i].last_name) + " " + 
-                element[i].party + " " + 
-                element[i].state + " " + 
-                element[i].seniority + " " + 
-                element[i].votes_with_party_pct + "%" + "</td></tr>");
+                "<tr>" +
+                "<td>" + element[i].first_name + "</td>" + 
+                "<td>" + (element[i].middle_name ||= " ") + "</td>" + 
+                "<td>" + addUrl(element[i].url, element[i].last_name) + "</td>" + 
+                "<td>" + element[i].party + "</td>" + 
+                "<td>" + element[i].state + "</td>" + 
+                "<td>" + element[i].seniority + "</td>" + 
+                "<td>" + element[i].votes_with_party_pct + "%" + "</td>" +
+                "</tr>");
     }
 }
 
