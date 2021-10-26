@@ -1,0 +1,10 @@
+.header {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.mail {
+    padding-top: 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
