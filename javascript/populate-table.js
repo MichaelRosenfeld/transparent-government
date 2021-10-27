@@ -1,22 +1,26 @@
 
-export function populateTable(element, target) {
-    for (let i = 0; i < element.length; i++) {
+// Takes Array of members, populates specified target table
 
-        function addUrl(link, name) {
-            return "<a href=" + link + ">" + name + "</a>";
-        }
-
+export function populateTable(array, target) {
+    
+    for (let i = 0; i < array.length; i++) {
         target.insertAdjacentHTML("beforeend",
             "<tr>" +
-            "<td>" + element[i].first_name + "</td>" +
-            "<td>" + (element[i].middle_name ||= " ") + "</td>" +
-            "<td>" + addUrl(element[i].url, element[i].last_name) + "</td>" +
-            "<td>" + element[i].party + "</td>" +
-            "<td>" + element[i].state + "</td>" +
-            "<td>" + element[i].seniority + "</td>" +
-            "<td>" + element[i].votes_with_party_pct + "%" + "</td>" +
+            "<td>" + array[i].first_name + "</td>" +
+            "<td>" + (array[i].middle_name ||= " ") + "</td>" +
+            "<td>" + addUrl(array[i].url, array[i].last_name) + "</td>" +
+            "<td>" + array[i].party + "</td>" +
+            "<td>" + array[i].state + "</td>" +
+            "<td>" + array[i].seniority + "</td>" +
+            "<td>" + array[i].votes_with_party_pct + "%" + "</td>" +
             "</tr>");
     }
+    
+    // Adds a link to personal Homepage to name of member
+    function addUrl(link, name) {
+        return "<a href=" + link + ">" + name + "</a>";
+    }
 }
+
 
 
