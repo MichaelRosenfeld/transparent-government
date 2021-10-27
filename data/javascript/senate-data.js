@@ -1,5 +1,3 @@
-
-
 let senateData =
     {
         "status": "OK",

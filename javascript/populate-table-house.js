@@ -1,18 +1,14 @@
-import {senateData} from '../data/javascript/senate-data.js';
+import {houseData} from '../data/javascript/house-data.js';
 
 
-const table = document.getElementById("senate-data");
-const membersArr = senateData.results[0].members;
+const table = document.getElementById("house-data");
+const membersArr = houseData.results[0].members;
 
 populateTable(membersArr);
 
 function populateTable(element) {
+
     for (let i = 0; i < membersArr.length; i++) {
-        
-        function addUrl(link, name) {
-            return "<a href=" + link + ">" + name + "</a>";
-        }
-        
         table.insertAdjacentHTML("beforeend",
             "<tr>" +
             "<td>" + element[i].first_name + "</td>" +
@@ -26,5 +22,6 @@ function populateTable(element) {
     }
 }
 
-
-
+function addUrl(link, name) {
+    return "<a href=" + link + ">" + name + "</a>";
+}
