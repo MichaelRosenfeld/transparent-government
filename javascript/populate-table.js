@@ -1,6 +1,4 @@
-
 // Takes Array of members, populates specified target table
-
 export function populateTable(array, target) {
     
     for (let i = 0; i < array.length; i++) {
