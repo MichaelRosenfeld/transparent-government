@@ -13,7 +13,7 @@ export function displaySelectedMembers() {
     document.getElementById("democrat").addEventListener("click", function () {
 
         if (document.getElementById("democrat").checked === true) {
-            filterMembersForParty();
+            filterMembersByParty();
         } else {
             while (senateTable.firstChild) {
                 senateTable.firstChild.remove()
@@ -24,7 +24,7 @@ export function displaySelectedMembers() {
     document.getElementById("republican").addEventListener("click", function () {
 
         if (document.getElementById("republican").checked === true) {
-            filterMembersForParty();
+            filterMembersByParty();
         } else {
             while (senateTable.firstChild) {
                 senateTable.firstChild.remove()
@@ -35,7 +35,7 @@ export function displaySelectedMembers() {
     document.getElementById("independent").addEventListener("click", function () {
 
         if (document.getElementById("independent").checked === true) {
-            filterMembersForParty();
+            filterMembersByParty();
         } else {
             while (senateTable.firstChild) {
                 senateTable.firstChild.remove()
@@ -44,7 +44,7 @@ export function displaySelectedMembers() {
     });
 }
 
-export function filterMembersForParty() {
+export function filterMembersByParty() {
 
     selected_members_filter = [];
     for (let i = 0; i < senateArr.length; i++) {
