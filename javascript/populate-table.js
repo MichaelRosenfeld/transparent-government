@@ -1,3 +1,4 @@
+
 // Takes Array of members, populates specified target table
 export function populateTable(array, target) {
     
@@ -13,12 +14,28 @@ export function populateTable(array, target) {
             "<td>" + array[i].votes_with_party_pct + "%" + "</td>" +
             "</tr>");
     }
-    
-    // Adds a link to personal Homepage to name of member
+
     function addUrl(link, name) {
         return "<a href=" + link + ">" + name + "</a>";
     }
+
+    // Variables
+    let checkboxArray = [];
+    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxArray.push(checkboxes[i].value)
+    }
+    console.log(checkboxArray);
 }
+
+
+
+
+
+
+
+
 
 
 
