@@ -5,40 +5,58 @@ import {populateTable} from "./populate-table.js";
 // Variables
 const senateTable = document.getElementById("senate-data");
 const senateArr = senateData.results[0].members;
+let selected_members_filter = [];
 
 // Function calls
-populateTable(senateArr, senateTable);
+checkIfSelected();
 
-//if Democrat is selected
-document.getElementById("democrat").addEventListener("click", function () {
+function checkIfSelected() {
+    document.getElementById("democrat").addEventListener("click", function () {
 
-    /*   filter_party(members_array) */
-    if (document.getElementById("democrat").checked === true){
-        populateTable(senateArr, senateTable);
+        if (document.getElementById("democrat").checked === true) {
+            filterMembersForParty();
+        }else {
+            document.getElementById("senate-data").innerHTML = "";
+        }
+    });
+
+    document.getElementById("republican").addEventListener("click", function () {
+
+        if (document.getElementById("republican").checked === true) {
+            filterMembersForParty();
+        } else {
+            document.getElementById("senate-data").innerHTML = "";
+        }
+    });
+
+    document.getElementById("independent").addEventListener("click", function () {
+
+        if (document.getElementById("independent").checked === true) {
+            filterMembersForParty();
+        }else {
+            document.getElementById("senate-data").innerHTML = "";
+        }
+    });
+}
+
+function filterMembersForParty(){
+
+    for (let i = 0; i < senateArr.length; i++) {
+        //democrats
+        if ((document.getElementById("democrat").checked && senateArr[i].party === 'D')) {
+            selected_members_filter.push(senateArr[i]);
+        }
+        // republicans
+        if ((document.getElementById("republican").checked && senateArr[i].party === 'R')){
+            selected_members_filter.push(senateArr[i]);
+        }
+        //independents
+        if ((document.getElementById("independent").checked && senateArr[i].party === 'ID')){
+            selected_members_filter.push(senateArr[i]);
+        }
+
     }
-    else{
-        populateTable(senateArr, senateTable);
-    }
-});
-//if Republican is selected
-document.getElementById("republican").addEventListener("click", function () {
-    /*   filter_party(members_array) */
-    if (document.getElementById("republican").checked === true){
-        populateTable(senateArr, senateTable);
-    }
-    else{
-        populateTable(senateArr, senateTable);
-    }
-});
-//if Independent is selected
-document.getElementById("independent").addEventListener("click", function () {
-    /*   filter_party(members_array) */
-    if (document.getElementById("independent").checked === true){
-        populateTable(senateArr, senateTable);
-    }
-    else{
-        populateTable(senateArr, senateTable);
-    }
-});
+    populateTable(selected_members_filter,senateTable);
+}
 
 

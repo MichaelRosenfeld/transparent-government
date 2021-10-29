@@ -19,14 +19,6 @@ export function populateTable(array, target) {
         return "<a href=" + link + ">" + name + "</a>";
     }
 
-    // Variables
-    let checkboxArray = [];
-    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
-
-    for (let i = 0; i < checkboxes.length; i++) {
-        checkboxArray.push(checkboxes[i].value)
-    }
-    console.log(checkboxArray);
 }
 
 
