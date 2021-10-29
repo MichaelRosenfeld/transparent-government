@@ -13,12 +13,20 @@ export function populateTable(array, target) {
             "<td>" + array[i].votes_with_party_pct + "%" + "</td>" +
             "</tr>");
     }
-    
-    // Adds a link to personal Homepage to name of member
+
     function addUrl(link, name) {
         return "<a href=" + link + ">" + name + "</a>";
     }
+
 }
+
+
+
+
+
+
+
+
 
 
 

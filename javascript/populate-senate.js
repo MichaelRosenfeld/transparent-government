@@ -1,10 +1,7 @@
-// Imports
-import {senateData} from "../data/javascript/senate-data.js";
-import {populateTable} from "./populate-table.js";
+import {displaySelectedMembers} from "./filter-members.js";
 
-// Variables
-const senateTable = document.getElementById("senate-data");
-const senateArr = senateData.results[0].members;
+displaySelectedMembers();
 
-// Function calls
-populateTable(senateArr, senateTable);
+
+
+
