@@ -5,7 +5,7 @@ import {senateData} from "../data/javascript/senate-data.js";
 // Variables
 const senateTable = document.getElementById("senate-data");
 const senateArr = senateData.results[0].members;
-let selected_members_filter = [];
+let filteredMembers = [];
 
 //Functions
 export function displaySelectedMembers() {
@@ -46,24 +46,24 @@ export function displaySelectedMembers() {
 
 export function filterMembersByParty() {
 
-    selected_members_filter = [];
+    filteredMembers = [];
     for (let i = 0; i < senateArr.length; i++) {
         //democrats
         if ((document.getElementById("democrat").checked && senateArr[i].party === 'D')) {
-            selected_members_filter.push(senateArr[i]);
+            filteredMembers.push(senateArr[i]);
         }
         // republicans
         if ((document.getElementById("republican").checked && senateArr[i].party === 'R')) {
-            selected_members_filter.push(senateArr[i]);
+            filteredMembers.push(senateArr[i]);
         }
         //independents
         if ((document.getElementById("independent").checked && senateArr[i].party === 'ID')) {
-            selected_members_filter.push(senateArr[i]);
+            filteredMembers.push(senateArr[i]);
         }
 
     }
     while (senateTable.firstChild) {
         senateTable.firstChild.remove()
     }
-    populateTable(selected_members_filter, senateTable);
+    populateTable(filteredMembers, senateTable);
 }
