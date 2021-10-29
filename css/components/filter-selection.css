@@ -1,9 +1,7 @@
 .filter-selection {
     display: flex;
     justify-content: space-around;
-    padding: 0;
-}
-.checkboxes{
     margin-top: 50px;
 }
+
 
