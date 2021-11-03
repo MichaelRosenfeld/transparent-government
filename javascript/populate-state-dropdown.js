@@ -8,14 +8,15 @@ const senateArr = senateData.results[0].members;
 
 
 //Functions
-export function populateStateDropdownList() {
+export function populateStateDropdown() {
     let states = getStatesFromData(senateArr);
     
     for(let i = 0; i < states.length; i++) {
         let state = states[i];
         let element = document.createElement("option");
-        element.textContent = state;
+        element.id = state;
         element.value = state;
+        element.textContent = state;
         stateList.add(element);
     }
 }

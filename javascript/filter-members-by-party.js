@@ -9,6 +9,8 @@ let filteredMembers = [];
 
 //Functions
 export function displaySelectedPartyMembers() {
+    populateTable(senateArr, senateTable);
+    
     document.getElementById("democrat").addEventListener("click", function () {
 
         if (document.getElementById("democrat").checked === true) {
@@ -47,19 +49,16 @@ export function filterMembersByParty() {
     filteredMembers = [];
     
     for (let i = 0; i < senateArr.length; i++) {
-        //democrats
+
         if ((document.getElementById("democrat").checked && senateArr[i].party === 'D')) {
             filteredMembers.push(senateArr[i]);
         }
-        // republicans
         if ((document.getElementById("republican").checked && senateArr[i].party === 'R')) {
             filteredMembers.push(senateArr[i]);
         }
-        //independents
         if ((document.getElementById("independent").checked && senateArr[i].party === 'ID')) {
             filteredMembers.push(senateArr[i]);
         }
-
     }
     while (senateTable.firstChild) {
         senateTable.firstChild.remove()
