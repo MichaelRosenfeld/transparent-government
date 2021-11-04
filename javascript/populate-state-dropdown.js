@@ -27,5 +27,6 @@ function getStatesFromData(array) {
     for (let i = 0; i < array.length; i++) {
         states.push(array[i].state);
     }
+    //Removes duplicates
     return [...new Set(states)];
 }
