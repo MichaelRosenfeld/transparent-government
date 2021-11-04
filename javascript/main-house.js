@@ -1,10 +1,16 @@
-// Imports
-import{houseData} from "../data/javascript/house-data.js";
-import {populateTable} from "./populate-table.js";
+//Imports
+import {displaySelectedPartyMembers} from "./filter-members-by-party.js";
+import {populateStateDropdown} from "./populate-state-dropdown.js";
+import {displaySelectedStateMembers} from "./filter-members-by-state.js";
+import {houseData} from "../data/javascript/house-data.js";
 
-// Variables
-const houseTable = document.getElementById("house-data");
+
+//Variables
 const houseArr = houseData.results[0].members;
+const houseTable = document.getElementById("house-data");
 
-// Function calls
-populateTable(houseArr, houseTable);
+
+//Function calls
+populateStateDropdown(houseArr);
+displaySelectedPartyMembers(houseArr, houseTable);
+displaySelectedStateMembers(houseArr, houseTable);
