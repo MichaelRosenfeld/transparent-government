@@ -1,7 +1,15 @@
 .filter-selection {
     display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+    justify-content: space-between;
+    width: 45%;
+    margin: 70px auto 20px;
+    opacity: 80%;
+    height: 50px;
+
 }
+.filter-selection:hover {
+opacity: 100%;
+}
+
 
 
