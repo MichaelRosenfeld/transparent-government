@@ -61,13 +61,30 @@
             every state is entitled to at least one representative. </p>
 
     </div>
-    <div class="checkbox">
-        <input id="republican" name="vehicle1" type="checkbox">
-        <label for="republican"> Republican</label>
-        <input id="democrat" name="vehicle2" type="checkbox">
-        <label for="democrat"> Democrat</label>
-        <input id="independent" name="vehicle3" type="checkbox">
-        <label for="independent"> Independent</label>
+    <div class="filter-selection">
+        <div class="filter-description">
+            <h5>Filter by:</h5>
+        </div>
+        <div class="dropdown-filter">
+            <select class="form-select form-select-sm" id="select-dropdown">
+                <option selected>States</option>
+            </select>
+        </div>
+        <div class="checkboxes checkbox-filter">
+            <div class="form-check-inline form-switch">
+                <input class="checkbox form-check-input" id="republican" name="party1" type="checkbox" value="R">
+                <label class="form-check-label" for="republican"> Republican</label>
+            </div>
+            <div class="form-check-inline form-switch">
+                <input class="checkbox form-check-input" id="democrat" name="party2" type="checkbox" value="D">
+                <label class="form-check-label" for="democrat"> Democrat</label>
+            </div>
+            <div class="form-check-inline form-switch">
+                <input class="checkbox form-check-input" id="independent" name="party3" type="checkbox" value="ID">
+                <label class="form-check-label" for="independent"> Independent</label>
+            </div>
+        </div>
+
     </div>
     <table class="table">
         <thead>
