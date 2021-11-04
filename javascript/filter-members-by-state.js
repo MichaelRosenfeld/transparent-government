@@ -10,14 +10,13 @@ let filteredMembers = [];
 //Functions
 export function displaySelectedStateMembers(array, target) {
     populateTable(array, target);
-    states.addEventListener("change", function () {
 
+    states.addEventListener("change", function () {
         filterMembersByState(array, target);
     })
 }
 
 function filterMembersByState(array, target) {
-    console.log("firing filter");
     filteredMembers = [];
 
     for (let i = 0; i < states.length; i++) {
