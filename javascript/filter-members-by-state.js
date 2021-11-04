@@ -1,39 +1,37 @@
 //Imports
 import {populateTable} from "./populate-table.js";
-import {senateData} from "../data/javascript/senate-data.js";
+
 
 //Variables
-const senateTable = document.getElementById("senate-data");
-const senateArr = senateData.results[0].members;
 let states = document.getElementById('select-dropdown');
 let filteredMembers = [];
 
-//Functions
-export function displaySelectedStateMembers() {
-    populateTable(senateArr, senateTable)
-    states.addEventListener("change", function (){
 
-        filterMembersByState();
+//Functions
+export function displaySelectedStateMembers(array, target) {
+    populateTable(array, target);
+
+    states.addEventListener("change", function () {
+        filterMembersByState(array, target);
     })
 }
 
-function filterMembersByState() {
-    console.log("firing filter");
+function filterMembersByState(array, target) {
     filteredMembers = [];
 
     for (let i = 0; i < states.length; i++) {
-        if(states[i].selected){
-            for (let j = 0; j < senateArr.length; j++) {
-                if(states[i].value === senateArr[j].state){
-                    filteredMembers.push(senateArr[j]);
+        if (states[i].selected) {
+            for (let j = 0; j < array.length; j++) {
+                if (states[i].value === array[j].state) {
+                    filteredMembers.push(array[j]);
                 }
             }
         }
     }
-    while (senateTable.firstChild){
-        senateTable.lastChild.remove();
+    while (target.firstChild) {
+        target.lastChild.remove();
     }
-    populateTable(filteredMembers, senateTable);
+    populateTable(filteredMembers, target);
 }
 
 

@@ -1,15 +1,9 @@
-// Imports
-import {senateData} from "../data/javascript/senate-data.js";
-
-
 //Variables
 const stateList = document.getElementById("select-dropdown");
-const senateArr = senateData.results[0].members;
-
 
 //Functions
-export function populateStateDropdown() {
-    let states = getStatesFromData(senateArr);
+export function populateStateDropdown(array) {
+    let states = getStatesFromData(array);
     
     for(let i = 0; i < states.length; i++) {
         let state = states[i];
