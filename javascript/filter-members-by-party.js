@@ -3,21 +3,19 @@ import {populateTable} from "./populate-table.js";
 import {senateData} from "../data/javascript/senate-data.js";
 
 // Variables
-const senateTable = document.getElementById("senate-data");
-const senateArr = senateData.results[0].members;
 let filteredMembers = [];
 
 //Functions
-export function displaySelectedPartyMembers() {
-    populateTable(senateArr, senateTable);
+export function displaySelectedPartyMembers(array, target) {
+    populateTable(array, target);
     
     document.getElementById("democrat").addEventListener("click", function () {
 
         if (document.getElementById("democrat").checked === true) {
-            filterMembersByParty();
+            filterMembersByParty(array, target);
         } else {
-            while (senateTable.firstChild) {
-                senateTable.firstChild.remove()
+            while (target.firstChild) {
+                target.firstChild.remove()
             }
         }
     });
@@ -25,10 +23,10 @@ export function displaySelectedPartyMembers() {
     document.getElementById("republican").addEventListener("click", function () {
 
         if (document.getElementById("republican").checked === true) {
-            filterMembersByParty();
+            filterMembersByParty(array, target);
         } else {
-            while (senateTable.firstChild) {
-                senateTable.firstChild.remove()
+            while (target.firstChild) {
+                target.firstChild.remove()
             }
         }
     });
@@ -36,32 +34,32 @@ export function displaySelectedPartyMembers() {
     document.getElementById("independent").addEventListener("click", function () {
 
         if (document.getElementById("independent").checked === true) {
-            filterMembersByParty();
+            filterMembersByParty(array, target);
         } else {
-            while (senateTable.firstChild) {
-                senateTable.firstChild.remove()
+            while (target.firstChild) {
+                target.firstChild.remove()
             }
         }
     });
 }
 
-export function filterMembersByParty() {
+export function filterMembersByParty(array, target) {
     filteredMembers = [];
     
-    for (let i = 0; i < senateArr.length; i++) {
+    for (let i = 0; i < array.length; i++) {
 
-        if ((document.getElementById("democrat").checked && senateArr[i].party === 'D')) {
-            filteredMembers.push(senateArr[i]);
+        if ((document.getElementById("democrat").checked && array[i].party === 'D')) {
+            filteredMembers.push(array[i]);
+        }array, target
+        if ((document.getElementById("republican").checked && array[i].party === 'R')) {
+            filteredMembers.push(array[i]);
         }
-        if ((document.getElementById("republican").checked && senateArr[i].party === 'R')) {
-            filteredMembers.push(senateArr[i]);
-        }
-        if ((document.getElementById("independent").checked && senateArr[i].party === 'ID')) {
-            filteredMembers.push(senateArr[i]);
+        if ((document.getElementById("independent").checked && array[i].party === 'ID')) {
+            filteredMembers.push(array[i]);
         }
     }
-    while (senateTable.firstChild) {
-        senateTable.firstChild.remove()
+    while (target.firstChild) {
+        target.firstChild.remove()
     }
-    populateTable(filteredMembers, senateTable);
+    populateTable(filteredMembers, target);
 }
