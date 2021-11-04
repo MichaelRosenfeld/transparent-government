@@ -13,7 +13,7 @@ const senateTable = document.getElementById("senate-data");
 //Function calls
 populateStateDropdown(senateArr);
 displaySelectedPartyMembers(senateArr, senateTable);
-displaySelectedStateMembers();
+displaySelectedStateMembers(senateArr, senateTable);
 
 
 

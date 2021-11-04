@@ -1,9 +1,10 @@
 // Imports
 import {populateTable} from "./populate-table.js";
-import {senateData} from "../data/javascript/senate-data.js";
+
 
 // Variables
 let filteredMembers = [];
+
 
 //Functions
 export function displaySelectedPartyMembers(array, target) {
@@ -50,7 +51,7 @@ export function filterMembersByParty(array, target) {
 
         if ((document.getElementById("democrat").checked && array[i].party === 'D')) {
             filteredMembers.push(array[i]);
-        }array, target
+        }
         if ((document.getElementById("republican").checked && array[i].party === 'R')) {
             filteredMembers.push(array[i]);
         }
