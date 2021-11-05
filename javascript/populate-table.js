@@ -5,7 +5,7 @@ export function populateTable(array, target) {
     target.insertAdjacentHTML("beforeend",
       "<tr>" +
       "<td>" + array[i].first_name + "</td>" +
-      "<td>" + (array[i].middle_name || = " ") + "</td>" +
+      "<td>" + (array[i].middle_name ||  " ") + "</td>" +
       "<td>" + addUrl(array[i].url, array[i].last_name) + "</td>" +
       "<td>" + array[i].party + "</td>" +
       "<td>" + array[i].state + "</td>" +
