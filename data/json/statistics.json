@@ -3,8 +3,8 @@
   "numRepublicans": "0",
   "numIndependents": "0",
   "avgVotesWithPartyBothParties": "0",
-  "numLeastVotedWithParty": "0",
-  "numMostVotedWithParty": "0",
-  "numMostMissedVotes": "0",
-  "numLeastMissedVotes": "0"
+  "leastVotedWithParty": "0",
+  "mostVotedWithParty": "0",
+  "mostMissedVotes": "0",
+  "leastMissedVotes": "0"
 }
