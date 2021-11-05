@@ -1,5 +1,7 @@
 //Imports
-import {populateTable} from "./populate-table.js";
+import {
+  populateTable
+} from "./populate-table.js";
 
 
 //Variables
@@ -9,29 +11,27 @@ let filteredMembers = [];
 
 //Functions
 export function displaySelectedStateMembers(array, target) {
-    populateTable(array, target);
+  populateTable(array, target);
 
-    states.addEventListener("change", function () {
-        filterMembersByState(array, target);
-    })
+  states.addEventListener("change", function() {
+    filterMembersByState(array, target);
+  })
 }
 
 function filterMembersByState(array, target) {
-    filteredMembers = [];
+  filteredMembers = [];
 
-    for (let i = 0; i < states.length; i++) {
-        if (states[i].selected) {
-            for (let j = 0; j < array.length; j++) {
-                if (states[i].value === array[j].state) {
-                    filteredMembers.push(array[j]);
-                }
-            }
+  for (let i = 0; i < states.length; i++) {
+    if (states[i].selected) {
+      for (let j = 0; j < array.length; j++) {
+        if (states[i].value === array[j].state) {
+          filteredMembers.push(array[j]);
         }
+      }
     }
-    while (target.firstChild) {
-        target.lastChild.remove();
-    }
-    populateTable(filteredMembers, target);
+  }
+  while (target.firstChild) {
+    target.lastChild.remove();
+  }
+  populateTable(filteredMembers, target);
 }
-
-
