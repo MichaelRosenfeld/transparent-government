@@ -3,6 +3,7 @@ import { senateData } from "../data/javascript/senate-data.js";
 import { houseData } from "../data/javascript/house-data.js";
 import { getMembers } from "./get-members.js";
 import { calcAverageVotesWithParty } from "./average-votes.js";
+import { leastVotedWithParty } from "./least-voted-with-party.js";
 import { statistics } from "../data/javascript/statistics.js";
 
 //Variables
@@ -22,4 +23,7 @@ statistics.numIndependents = getMembers(membersArr, "I").length;
 statistics.avgVotesWithPartyBothParties = calcAverageVotesWithParty(membersArr);
 statistics.avgVotesWithPartyRepublicans = calcAverageVotesWithParty(getMembers(membersArr, "R"));
 statistics.avgVotesWithPartyDemocrats = calcAverageVotesWithParty(getMembers(membersArr, "D"));
+
+//Least Votes with Party
+statistics.leastVotedWithParty = leastVotedWithParty(membersArr);
 console.log(statistics);
