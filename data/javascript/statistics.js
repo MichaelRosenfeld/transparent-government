@@ -1,4 +1,5 @@
 let statistics = {
+  "numAllMembers": 0,
   "numDemocrats": 0,
   "numRepublicans": 0,
   "numIndependents": 0,

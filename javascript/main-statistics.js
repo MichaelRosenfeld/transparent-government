@@ -13,6 +13,7 @@ const membersArr = senateArr.concat(houseArr);
 //Function calls
 
 //Amount of respective members
+statistics.numAllMembers = getMembers(membersArr).length;
 statistics.numDemocrats = getMembers(membersArr, "D").length;
 statistics.numRepublicans = getMembers(membersArr,"R").length;
 statistics.numIndependents = getMembers(membersArr, "I").length;
