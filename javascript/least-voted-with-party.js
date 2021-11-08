@@ -1,11 +1,11 @@
-export function leastVotedWithParty(array) {
+export function calcTopTen(array, key) {
   let votesArray = [];
   let result = [];
 
   //Push needed vote percentages from the Object to
   //an array for further manipulation
   for (let i = 0; i < array.length; i++) {
-    votesArray.push(array[i].votes_against_party_pct);
+    votesArray.push(array[i][key]);
   }
 
   //Save the top ten values to this array
@@ -16,7 +16,7 @@ export function leastVotedWithParty(array) {
   //the Result Array
   for (let i = 0; i < array.length; i++) {
     array.filter(obj => {
-      if (obj.votes_against_party_pct === topTen[i]) {
+      if (obj[key] === topTen[i]) {
         result.push(obj.first_name, obj.last_name);
       }
     })
