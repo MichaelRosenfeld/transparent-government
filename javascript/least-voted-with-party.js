@@ -17,7 +17,7 @@ export function leastVotedWithParty(array) {
   for (let i = 0; i < array.length; i++) {
     array.filter(obj => {
       if (obj.votes_against_party_pct === topTen[i]) {
-        result.push(obj.last_name);
+        result.push(obj.first_name, obj.last_name);
       }
     })
   }
