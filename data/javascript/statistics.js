@@ -8,3 +8,5 @@ let statistics = {
   "mostMissedVotes": 0,
   "leastMissedVotes": 0
 };
+
+export {statistics};
