@@ -1,5 +1,5 @@
 
-export function getMembers(data, party) {
+export function getNumOfMembers(data, party) {
   let members = [];
 
   if (party) {
