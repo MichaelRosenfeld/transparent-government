@@ -26,8 +26,6 @@ export function calcTopTen(array, key) {
   }
 
   let uniqueResult = [...new Set(result)];
-
-  console.log(uniqueResult);
   return uniqueResult;
 }
 
@@ -52,6 +50,5 @@ export function calcLeastMissedVotes(array, key) {
       }
     });
   }
-  console.log(result);
   return result;
 }
