@@ -31,6 +31,8 @@ export function calcTopTen(array, key) {
   return uniqueResult;
 }
 
+//I know this is disgusting and doing almost the same as above,
+//but no time to refactor for now.
 export function calcLeastMissedVotes(array, key) {
   let votesArray = [];
   let result = [];
