@@ -5,11 +5,15 @@ import { getNumOfMembers } from "./get-members.js";
 import { calcAverageVotesWithParty } from "./average-votes.js";
 import { calcTopTen, calcLeastMissedVotes } from "./calc-top-ten.js";
 import { statistics } from "../data/javascript/statistics.js";
+import { populateAtGlance } from "./populate-table.js";
 
 //Variables
 const senateArr = senateData.results[0].members;
 const houseArr = houseData.results[0].members;
 const membersArr = senateArr.concat(houseArr);
+const republicansAtGlance = document.getElementById("republicans-amount");
+const democratsAtGlance = document.getElementById("democrats-amount");
+const independentsAtGlance = document.getElementById("independents-amount");
 
 //Function calls
 statistics.numAllMembers = getNumOfMembers(membersArr).length;
@@ -35,4 +39,9 @@ statistics.leastMissedVotes = calcLeastMissedVotes(
   membersArr,
   "missed_votes_pct"
 );
+
+populateAtGlance(statistics, republicansAtGlance, "numRepublicans", "avgVotesWithPartyRepublicans");
+populateAtGlance(statistics, democratsAtGlance, "numDemocrats", "avgVotesWithPartyDemocrats");
+populateAtGlance(statistics, independentsAtGlance, "numIndependents");
+
 console.log(statistics);
