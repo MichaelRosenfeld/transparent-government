@@ -1,12 +1,13 @@
-let houseData = fetch(
-  "https://api.propublica.org/congress/v1/113/house/members.json",
-  {
-    type: "GET",
-    dataType: "json",
+const url = "https://api.propublica.org/congress/v1/113/house/members.json";
+
+async function getData(url) {
+  const response = await fetch(url, {
     headers: { "X-API-Key": "FzLQb1m5Kv6Jp5dRmBYR8vaMJ1aN6fGpxyEp3sxp" },
-  }
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+  });
+
+  return response.json();
+}
+
+const houseData = await getData(url);
 
 export { houseData };
