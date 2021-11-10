@@ -35,6 +35,10 @@ export function populateTable(array, target) {
   }
 }
 
-export function populateAtGlance(array, target, key) {
-  target.insertAdjacentHTML("beforeend", "<td>" + array[key]) + "</td>";
+export function populateAtGlance(object, target, key, key2) {
+  target.insertAdjacentHTML("beforeend", "<td>" + object[key]) + "%" + "</td>";
+
+  if (key2) {
+    target.insertAdjacentHTML("beforeend", "<td>" + object[key2]) + "</td>";
+  }
 }
