@@ -40,8 +40,18 @@ statistics.leastMissedVotes = calcLeastMissedVotes(
   "missed_votes_pct"
 );
 
-populateAtGlance(statistics, republicansAtGlance, "numRepublicans", "avgVotesWithPartyRepublicans");
-populateAtGlance(statistics, democratsAtGlance, "numDemocrats", "avgVotesWithPartyDemocrats");
+populateAtGlance(
+  statistics,
+  republicansAtGlance,
+  "numRepublicans",
+  "avgVotesWithPartyRepublicans"
+);
+populateAtGlance(
+  statistics,
+  democratsAtGlance,
+  "numDemocrats",
+  "avgVotesWithPartyDemocrats"
+);
 populateAtGlance(statistics, independentsAtGlance, "numIndependents");
 
 console.log(statistics);

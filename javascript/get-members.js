@@ -1,4 +1,3 @@
-
 export function getNumOfMembers(data, party) {
   let members = [];
 
